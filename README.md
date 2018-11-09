@@ -1,1 +1,1 @@
-Kendall Strautman's splash page - strautman.co
+Kendall Strautman's splash page - kendallstrautman.com

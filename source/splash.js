@@ -10,6 +10,7 @@ let contactBtn = $(".contact");
 let landingBlurb = $(".landingBlurb");
 let landingBool = 1;
 let infoBlurb = $(".infoBlurb");
+const infoTags = $("p");
 let infoBool = 0;
 let tempTag = document.querySelector(".temp")
 const url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=81601,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109";
@@ -56,6 +57,12 @@ contactBtn.click(function()
 - if it does, remove 'isClicked' and add 'notClicked'
 - do the reverse for the infoBlurb
 */
+
+setTimeout(function(){
+  landingBlurb.addClass('transform');
+  infoTags.addClass('active');
+}, 400);
+
 
 
 const checkTemp = function() {

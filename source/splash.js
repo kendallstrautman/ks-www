@@ -60,6 +60,7 @@ contactBtn.click(function()
 
 setTimeout(function(){
   landingBlurb.addClass('transform');
+  infoBlurb.addClass('transform');
   infoTags.addClass('active');
 }, 400);
 

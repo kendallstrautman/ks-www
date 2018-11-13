@@ -186,8 +186,6 @@ a:hover {
 
 @media screen and
   (min-width: 1024px) {
-      /*what do use here - css grid???
-      need to keep in mind how this will affect the animation*/
 
       h1 {
         font-size: 56px;
@@ -205,6 +203,10 @@ a:hover {
       .landingBlurb {
         opacity: 0;
         transition: transform 1.5s cubic-bezier(.45, 0, .68, 1), opacity 1s;
+      }
+
+      .infoBlurb {
+        transition: transform 1.5s cubic-bezier(.45, 0, .68, 1);
       }
 
       .transform {
@@ -236,13 +238,12 @@ a:hover {
       }
 
       p:nth-child(n+2) { padding-top: 24px; }
+
   }
 
 
   @media screen and
     (min-width: 1440px) {
-        /*what do use here - css grid???
-        need to keep in mind how this will affect the animation*/
 
         h1 {
           font-size: 56px;

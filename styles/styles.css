@@ -83,7 +83,7 @@ h1 > a:after {
     width: 0;
   }
 
-h1 > a.email:hover:after {
+h1 > a:hover:after {
     width: 100%;
     left: 0;
   }

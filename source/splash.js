@@ -51,5 +51,3 @@ const checkTemp = function() {
     };
 
 checkTemp();
-
-    //TODO - create a function that checks for screen width >= 450px, then update the email and town to longform

@@ -124,13 +124,13 @@ span.locationLrg {
 /*-------COLOR-FADE-ANIMATION---------------------------------*/
 
 body.nightMode {
-    animation: bgNight 30s linear 1s infinite alternate;
+    animation: bgNight 15s linear 1s infinite alternate;
     color: #dfdfd9;
     background-color: #1d1d21;
   }
 
 body.dayMode {
-    animation: bgDay 30s linear 1s infinite alternate;
+    animation: bgDay 15s linear 1s infinite alternate;
   }
 
 @keyframes bgDay {

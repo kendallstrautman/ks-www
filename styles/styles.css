@@ -117,7 +117,7 @@ p > a:hover:after {
 }
 
 a.emailLrg,
-a.locationLrg {
+span.locationLrg {
   display: none;
 }
 
@@ -224,12 +224,12 @@ body.dayMode {
   and (max-width: 1023px) {
 
     a.emailSml,
-    a.locationSml {
+    span.locationSml {
       display: none;
     }
 
     a.emailLrg,
-    a.locationLrg {
+    span.locationLrg {
       display: inline;
     }
 
@@ -253,12 +253,12 @@ body.dayMode {
   (min-width: 1024px) {
 
     a.emailSml,
-    a.locationSml {
+    span.locationSml {
       display: none;
     }
 
     a.emailLrg,
-    a.locationLrg {
+    span.locationLrg {
       display: inline;
     }
 
@@ -323,12 +323,12 @@ body.dayMode {
     (min-width: 1440px) {
 
       a.emailSml,
-      a.locationSml {
+      span.locationSml {
         display: none;
       }
 
       a.emailLrg,
-      a.locationLrg {
+      span.locationLrg {
         display: inline;
       }
 

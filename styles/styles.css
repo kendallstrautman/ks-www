@@ -1,95 +1,149 @@
 /*** UNIVERSAL*******************************/
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-}
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
 
-/*FONTS------------------------------------*/
-
-@font-face {
-  font-family: 'Basis Grotesque Light';
-  src: url(basis-light.otf) format('opentype');
-  font-weight: normal;
-}
+/*--------FONTS------------------------------------*/
 
 @font-face {
-  font-family: 'Founders Grotesk Light';
-  src: url(FoundersGrotesk-Light.otf) format('opentype');
-  font-weight: normal;
-}
+    font-family: 'Basis Grotesque Light';
+    src: url(basis-light.otf) format('opentype');
+    font-weight: normal;
+  }
 
-/*WHY THE FUCK ISNT THIS FONT WORKING? but like the regular weight will load. is it because its on my comp??*/
+@font-face {
+    font-family: 'Founders Grotesk Light';
+    src: url(FoundersGrotesk-Light.otf) format('opentype');
+    font-weight: normal;
+  }
 
-/*MAIN-STYLES---------------------------------*/
+/*---------MAIN-STYLES---------------------------------*/
 
-.body {
-  font-family: 'Founders Grotesk Light', Helvetica, sans-serif;
-  /* font-family: 'Basis Grotesque Light', Helvetica, sans-serif; */
-  color: white;
-  background-color: #dccebe;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: .5px;
-}
+body {
+    font-family: 'Founders Grotesk Light', Helvetica, sans-serif;
+    color: white;
+    background-color: #dccebe;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: .5px;
+  }
 
 div.main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
 section.blurb {
-  padding: 20vw 10vw 0 10vw;
-  display: flex;
-}
+    padding: 20vw 10vw 0 10vw;
+    display: flex;
+  }
 
 section.info {
-  padding: 0 10vw 10vw 10vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    padding: 0 10vw 10vw 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
 h1 {
-  line-height: 1.3;
-  font-size: 36px;
-  letter-spacing: .5px;
-  font-weight: 100;
+      line-height: 1.3;
+      font-size: 36px;
+      letter-spacing: .5px;
+      font-weight: 100;
+    }
+
+h1 > a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      padding-left: 3px;
+      padding-right: 3px;
+      padding-bottom: 0;
+      position: relative;
+      line-height: 1;
+    }
+
+h1 > a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+h1 > a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+p > a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+    position: relative;
+    line-height: 1;
+  }
+
+p > a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
-/*COLOR-FADE-ANIMATION---------------------------------*/
+p > a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+a.emailLrg,
+a.locationLrg {
+  display: none;
+}
+
+/*-------COLOR-FADE-ANIMATION---------------------------------*/
 
 body.nightMode {
-  animation: bgNight 30s linear 1s infinite alternate;
-  color: #dfdfd9;
-  background-color: #1d1d21;
-}
+    animation: bgNight 30s linear 1s infinite alternate;
+    color: #dfdfd9;
+    background-color: #1d1d21;
+  }
 
 body.dayMode {
     animation: bgDay 30s linear 1s infinite alternate;
-}
+  }
 
 @keyframes bgDay {
-  0% {background-color: #dccebe;}
-  50% {background-color: #dabebe;}
-  100% {background-color: #c8d6d8;}
-}
+    0% {background-color: #dccebe;}
+    50% {background-color: #dabebe;}
+    100% {background-color: #c8d6d8;}
+  }
 
 @keyframes bgNight {
     0% {background-color: #1d1d21;}
-  50% {background-color: #18162b;}
-  100% {background-color: #3b3233;}
-}
+    50% {background-color: #18162b;}
+    100% {background-color: #3b3233;}
+  }
 
 /*INTRO ANIMATIONS ------------------------------------------------- - note these are currently for >1024px*/
 
@@ -104,61 +158,62 @@ body.dayMode {
 } */
 
 .item1 {
-  transition: opacity .33s .75s ease-out;
-  opacity: 0;
-}
+    transition: opacity .33s .75s ease-out;
+    opacity: 0;
+  }
 
 .item2 {
-  transition: opacity .33s 1.1s ease-out;
-  opacity: 0;
-}
+    transition: opacity .33s 1.1s ease-out;
+    opacity: 0;
+  }
 
 .item3 {
-  transition: opacity .33s 1.4s ease-out;
-  opacity: 0;
-}
+    transition: opacity .33s 1.4s ease-out;
+    opacity: 0;
+  }
 
 .active {
-  opacity: 1;
-}
+    opacity: 1;
+  }
 
 
-/* SPECIAL JS or HOVER CLASSES-------------------------------------*/
+/* ---- FOR PARAGRAPH TOGGLE -------------------------------------*/
+
 
 .isClicked {
-/*   opacity: 100%; */
-  display: inline;
-  z-index: 1;
-}
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 250ms, visibility 0s linear 400ms;
+  }
 
 .notClicked {
-/*   opacity: 0%; */
-  display: none;
-  z-index: -1;
-}
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 250ms linear, visibility 0s linear 250ms;
+  }
 
-a:hover {
-  text-decoration: underline;
-  /*need to make a cooler hover state here or transition -
-  would be cool to not have such a thick underline */
-}
+  /* ^^^^^^ right now the opacity transition won't work >1024px
+  its being overwritten by the initial loading transition
+  will need to implement this visibility transition once
+  I convert the initial animation to keyframes. */
 
-/* MEDIAQUERIES ----------------------------*/
+/* ------ MEDIAQUERIES ----------------------------*/
 
 @media screen and
   (min-width: 375px)
   and (max-width: 767px) {
 
     section.blurb {
-      max-width: 500px;
-    }
+        max-width: 500px;
+      }
 
     section.info {
-      padding: 0 0 16vw 10vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+        padding: 0 0 16vw 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
     p:nth-child(n+1) { padding-top: 24px; }
 
@@ -168,12 +223,22 @@ a:hover {
   (min-width: 768px)
   and (max-width: 1023px) {
 
-      section.blurb {
+    a.emailSml,
+    a.locationSml {
+      display: none;
+    }
+
+    a.emailLrg,
+    a.locationLrg {
+      display: inline;
+    }
+
+    section.blurb {
         padding: 20vw 10vw 0 10vw;
         max-width: 500px;
       }
 
-      section.info {
+    section.info {
         padding: 0 0 16vw 10vw;
         display: flex;
         flex-direction: column;
@@ -187,42 +252,54 @@ a:hover {
 @media screen and
   (min-width: 1024px) {
 
-      h1 {
+    a.emailSml,
+    a.locationSml {
+      display: none;
+    }
+
+    a.emailLrg,
+    a.locationLrg {
+      display: inline;
+    }
+
+    h1 {
         font-size: 56px;
         line-height: 1.3;
         letter-spacing: .5px;
       }
 
-      div.main {
+    div.main {
         width: 80%;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
       }
 
-      .landingBlurb {
+    .landingBlurb {
         opacity: 0;
         transition: transform 1.5s cubic-bezier(.45, 0, .68, 1), opacity 1s;
+        width: 500px;
       }
 
-      .infoBlurb {
+    .contactBlurb {
         transition: transform 1.5s cubic-bezier(.45, 0, .68, 1);
+        width: 500px;
       }
 
-      .transform {
-        transform: translateX(130px);
+    .transform {
+        transform: translateX(100px);
         opacity: 1;
       }
 
-      section.blurb {
+    section.blurb {
         padding: 0;
         max-width: 500px;
         margin: auto 0 auto 0;
       }
 
-      section.info {
-        /* padding: 0 16vw 0 10vw; */
-        padding: 0 6vw 0 10vw;
+    section.info {
+        /* padding: 0 16vw 0 10vw; May need to fiddle w/ padding here */
+        padding: 0 8vw 0 10vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -230,14 +307,14 @@ a:hover {
         margin: auto 0 auto 0;
       }
 
-      section.info p {
+    section.info p {
         width: 70px;
         font-size: 18px;
         line-height: 1.5;
         letter-spacing: .5px;
       }
 
-      p:nth-child(n+2) { padding-top: 24px; }
+    p:nth-child(n+2) { padding-top: 24px; }
 
   }
 
@@ -245,37 +322,53 @@ a:hover {
   @media screen and
     (min-width: 1440px) {
 
-        h1 {
+      a.emailSml,
+      a.locationSml {
+        display: none;
+      }
+
+      a.emailLrg,
+      a.locationLrg {
+        display: inline;
+      }
+
+      h1 {
           font-size: 56px;
           line-height: 1.3;
           letter-spacing: .5px;
         }
 
-        div.main {
+      div.main {
           width: 66%;
           display: flex;
           flex-direction: row-reverse;
           justify-content: center;
         }
 
-        .landingBlurb {
+      .landingBlurb {
           opacity: 0;
           transition: transform 1.5s cubic-bezier(.45, 0, .68, 1), opacity 1s;
+          width: 500px;
         }
 
-        .transform {
-          transform: translateX(130px);
+      .contactBlurb {
+          transition: transform 1.5s cubic-bezier(.45, 0, .68, 1);
+          width: 500px;
+        }
+
+      .transform {
+          transform: translateX(100px);
           opacity: 1;
         }
 
-        section.blurb {
+      section.blurb {
           padding: 0;
           max-width: 500px;
           margin: auto 0 auto 0;
         }
 
-        section.info {
-          padding: 0 6vw 0 10vw;
+      section.info {
+          padding: 0 8vw 0 10vw;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -283,12 +376,12 @@ a:hover {
           margin: auto 0 auto 0;
         }
 
-        section.info p {
+      section.info p {
           width: 70px;
           font-size: 18px;
           line-height: 1.5;
           letter-spacing: .5px;
         }
 
-        p:nth-child(n+2) { padding-top: 24px; }
+      p:nth-child(n+2) { padding-top: 24px; }
     }

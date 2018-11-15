@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const now = new Date();
 const hours = now.getHours();
 const bodyElm = $("body");
@@ -47,7 +49,7 @@ const checkTemp = function() {
                 //convert kelvin data to farenheight
             realTemp = Math.round(1.8 * (realTemp - 273) + 32).toString();
             tempTag.innerHTML = realTemp;
-          })
+          });
     };
 
 checkTemp();

@@ -31,14 +31,21 @@ body {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: .5px;
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
   }
 
 div.main {
-    height: 100vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
+  /*NEED to MAKE Mediaqueries looking for the height of the device
+  adjust the div.main height accordingly */
 
 section.blurb {
     padding: 20vw 10vw 0 10vw;
@@ -145,17 +152,7 @@ body.dayMode {
     100% {background-color: #3b3233;}
   }
 
-/*INTRO ANIMATIONS ------------------------------------------------- - note these are currently for >1024px*/
-
-/* .landingBlurb {
-  opacity: 0;
-  transition: transform 1.5s cubic-bezier(.45, 0, .68, 1), opacity 1s;
-}
-
-.transform {
-  transform: translateX(130px);
-  opacity: 1;
-} */
+/* MOBILE INTRO ANIMATIONS ------------------------------------------------- */
 
 .item1 {
     transition: opacity .33s .75s ease-out;
@@ -200,6 +197,7 @@ body.dayMode {
 
 /* ------ MEDIAQUERIES ----------------------------*/
 
+
 @media screen and
   (min-width: 375px)
   and (max-width: 767px) {
@@ -219,9 +217,37 @@ body.dayMode {
 
   }
 
+/* IPHONE X *-----------------------------*/
+
+@media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+          div.main {
+            height: 88vh;
+          }
+     }
+
+/*--Iphone 6+, 7+, 8+, XR and XR Max ---------------------------------*/
+
+@media screen and
+  and (min-height: 668px)
+  and (max-height: 897px)
+  and (-webkit-max-device-pixel-ratio: 3) {
+      div.main {
+          height: 90vh;
+        }
+  }
+
+/*-------------------------------------------------------------------- */
+
 @media screen and
   (min-width: 768px)
   and (max-width: 1023px) {
+
+    div.main {
+      height: 100vh;
+    }
 
     a.emailSml,
     span.locationSml {
@@ -251,6 +277,10 @@ body.dayMode {
 
 @media screen and
   (min-width: 1024px) {
+
+    div.main {
+      height: 100vh;
+    }
 
     a.emailSml,
     span.locationSml {

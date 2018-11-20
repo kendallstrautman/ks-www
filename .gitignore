@@ -1,4 +1,4 @@
-# ignore all files that have a .txt
+# ignore all files - text, sketch, videos, and anything in design dir
 *.txt
 *.sketch
 *.mp4

@@ -1,5 +1,5 @@
 # ignore all files - text, sketch, videos, and anything in design dir
-*.txt
+*notes.txt
 *.sketch
 *.mp4
 *design/

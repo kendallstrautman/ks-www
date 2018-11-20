@@ -1,0 +1,9 @@
+# Rule 1
+User-agent: *
+Allow: /
+
+# Rule 2
+User-agent: Googlebot
+Allow: /
+
+Sitemap: http://www.kendallstrautman.com/sitemap.xml

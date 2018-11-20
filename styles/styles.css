@@ -71,6 +71,7 @@ a   {
       padding: 0 3px 0 3px;
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
     }
 
 a:hover {
@@ -134,20 +135,15 @@ body.dayMode {
 .isClicked {
     visibility: visible;
     opacity: 1;
-    transition: opacity 250ms, visibility 0s linear 400ms;
+    transition: opacity .4s, visibility 0s linear 400ms;
   }
 
 .notClicked {
     visibility: hidden;
     position: absolute;
     opacity: 0;
-    transition: opacity 250ms linear, visibility 0s linear 250ms;
+    transition: opacity .2s linear, visibility 0s linear 200ms;
   }
-
-  /* ^^^^^^ right now the opacity transition won't work >1024px
-  its being overwritten by the initial loading transition
-  will need to implement this visibility transition once
-  I convert the initial animation to keyframes. */
 
 /* ------ MEDIAQUERIES ------------------------------------------------------*/
 
@@ -293,6 +289,34 @@ body.dayMode {
 
 /* Intro Animation ----------------------------------------------------*/
 
+.landingBlurb {
+    width: 500px;
+    animation: slide-right 1.5s cubic-bezier(.45, 0, .68, 1) 1 forwards;
+  }
+
+.contactBlurb {
+    width: 500px;
+    animation: slide-right 1.5s cubic-bezier(.45, 0, .68, 1) 1 forwards;
+  }
+
+  @keyframes slide-right {
+  0% {}
+  100% {transform: translateX(100px)}
+}
+
+.fade {
+  animation: fade-in .8s cubic-bezier(.45, 0, .68, 1) 1 forwards;
+}
+
+@keyframes fade-in {
+  0% {opacity:0}
+  100% {opacity:1}
+}
+
+
+/* below is the same animation used with transitions/transforms.
+chose @keyframes to have more control
+
     .landingBlurb {
         opacity: 0;
         transition: transform 1.5s cubic-bezier(.45, 0, .68, 1), opacity 1s;
@@ -307,7 +331,9 @@ body.dayMode {
     .transform {
         transform: translateX(100px);
         opacity: 1;
-      }
+      } */
+
+
 
 /*---Special HOVER STATES---------------------------------------------**/
 

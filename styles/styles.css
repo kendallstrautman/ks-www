@@ -40,7 +40,7 @@ body {
 div.main {
     height: 95vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
   }
 
@@ -239,8 +239,8 @@ body.dayMode {
         width: 80%;
         height: 100vh;
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: left;
       }
 
     h1 {
@@ -256,8 +256,9 @@ body.dayMode {
         }
 
     section.info {
-          /* padding: 0 16vw 0 10vw; May need to fiddle w/ padding here */
-          padding: 0 8vw 0 10vw;
+          /* padding: 0 16vw 0 10vw; May need to fiddle w/ padding here
+          need to figure out how much offset 50x is in vw*/
+          padding: 0 12vw 0 10vw;
           display: flex;
           flex-direction: column;
           justify-content: space-between;

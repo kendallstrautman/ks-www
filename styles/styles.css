@@ -291,21 +291,21 @@ body.dayMode {
 
 .landingBlurb {
     width: 500px;
-    animation: slide-right 1.5s cubic-bezier(.45, 0, .68, 1) 1 forwards;
+    animation: slide-right 1.5s cubic-bezier( .33 , 0 , .2 , 1 ) 1 forwards;
   }
 
 .contactBlurb {
     width: 500px;
-    animation: slide-right 1.5s cubic-bezier(.45, 0, .68, 1) 1 forwards;
+    animation: slide-right 1.5s cubic-bezier( .33 , 0 , .2 , 1 ) 1 forwards;
   }
 
   @keyframes slide-right {
   0% {}
-  100% {transform: translateX(100px)}
+  100% {transform: translateX(50px)}
 }
 
 .fade {
-  animation: fade-in .8s cubic-bezier(.45, 0, .68, 1) 1 forwards;
+  animation: fade-in .8s ease-out 1 forwards;
 }
 
 @keyframes fade-in {

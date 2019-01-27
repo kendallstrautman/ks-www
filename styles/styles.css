@@ -38,7 +38,7 @@ body {
   }
 
 div.main {
-    height: 95vh;
+    height: 88vh;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
@@ -155,13 +155,6 @@ body.dayMode {
 
       section.blurb {
           max-width: 500px;
-        }
-
-      section.info {
-          padding: 0 0 16vw 10vw;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
         }
 
       p:nth-child(n+1) { padding-top: 24px; }

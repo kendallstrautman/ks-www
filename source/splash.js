@@ -4,55 +4,81 @@ const now = new Date();
 const hours = now.getHours();
 const bodyElm = $("body");
 const contactBtn = $(".contact");
+workBtn = $(".item2");
+socialBtn = $(".item3");
+const workPar = $(".work");
+socialPar = $(".social");
 const landingPar = $(".landingBlurb");
-let isClicked;
 const contactPar = $(".contactBlurb");
+buttons = [contactBtn, workBtn, socialBtn];
+sections = [contactPar, workPar, socialPar, landingPar];
 const infoTags = $("p");
 const tempTag = document.querySelector(".temp");
-const url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=97703,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109";
+const url =
+  "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=97703,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109";
 
-    // check for users local time, apply appropriate day/night mode
-if (hours >= 19 || hours <= 6){
-      bodyElm.addClass("nightMode");
-  } else {
-      bodyElm.addClass("dayMode");
-  }
+// check for users local time, apply appropriate day/night mode
+if (hours >= 19 || hours <= 6) {
+  bodyElm.addClass("nightMode");
+} else {
+  bodyElm.addClass("dayMode");
+}
 
-    //initiate loading animation
-setTimeout( function () {
-    landingPar.addClass('transform');
-    contactPar.addClass('transform');
-    infoTags.addClass('active');
-  }, 400);
+//initiate loading animation
+setTimeout(function() {
+  landingPar.addClass("transform");
+  contactPar.addClass("transform");
+  infoTags.addClass("active");
+}, 400);
 
-      //fetch temp from openweathermap, update the dom
+//fetch temp from openweathermap, update the dom
 const checkTemp = function() {
-    fetch(url)
-      .then(response => response.json())
-        .then(data => {
-            realTemp = data.main.temp;
-                //convert kelvin data to farenheight
-            realTemp = Math.round(1.8 * (realTemp - 273) + 32).toString();
-            tempTag.innerHTML = realTemp;
-          });
-    };
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      realTemp = data.main.temp;
+      //convert kelvin data to farenheight
+      realTemp = Math.round(1.8 * (realTemp - 273) + 32).toString();
+      tempTag.innerHTML = realTemp;
+    });
+};
 
 checkTemp();
 
 //upon click of the contactBtn, alter which blurb is showing
-
-contactBtn.click(function() {
-    if (isClicked) {
-          contactPar.removeClass("isClicked").addClass("notClicked");
-          landingPar.removeClass("notClicked").addClass("isClicked");
-          isClicked = false;
-      } else {
-          landingPar.removeClass("isClicked").addClass("notClicked");
-          contactPar.removeClass("notClicked").addClass("isClicked");
-          isClicked = true;
+buttons.map(item => {
+  return item.click(e => {
+    let currentPar;
+    if (e.target.innerHTML == "contact") {
+      currentPar = contactPar;
+    } else if (e.target.innerHTML == "work") {
+      currentPar = workPar;
+    } else if (e.target.innerHTML == "social") {
+      currentPar = socialPar;
+    }
+    currentPar.removeClass("notClicked").addClass("isClicked");
+    sections.map(section => {
+      if (!(section == currentPar)) {
+        section.removeClass("isClicked").addClass("notClicked");
       }
     });
+  });
+});
+// contactBtn.click(function() {
+//   let isClicked;
+//   if (isClicked) {
+//     contactPar.removeClass("isClicked").addClass("notClicked");
+//     landingPar.removeClass("notClicked").addClass("isClicked");
+//     isClicked = false;
+//   } else {
+//     landingPar.removeClass("isClicked").addClass("notClicked");
+//     contactPar.removeClass("notClicked").addClass("isClicked");
+//     isClicked = true;
+//   }
+// });
 
-if(window.innerWidth > 460) {
-    document.querySelector('.landingBlurb').innerHTML = `web development, <br> creative writing and <br> digital production`;
+if (window.innerWidth > 460) {
+  document.querySelector(
+    ".landingBlurb"
+  ).innerHTML = `web development, <br> creative writing and <br> digital production`;
 }

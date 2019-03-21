@@ -1,20 +1,21 @@
 /*jshint esversion: 6 */
 
 const now = new Date();
-const hours = now.getHours();
-const bodyElm = $("body");
-const contactBtn = $(".contact");
+hours = now.getHours();
+bodyElm = $("body");
+contactBtn = $(".contact");
 workBtn = $(".item2");
 socialBtn = $(".item3");
-const workPar = $(".work");
+workPar = $(".work");
 socialPar = $(".social");
-const landingPar = $(".landingBlurb");
-const contactPar = $(".contactBlurb");
+landingPar = $(".landingBlurb");
+contactPar = $(".contactBlurb");
+// contactPar = $(".blurb");
 buttons = [contactBtn, workBtn, socialBtn];
 sections = [contactPar, workPar, socialPar, landingPar];
-const infoTags = $("p");
-const tempTag = document.querySelector(".temp");
-const url =
+infoTags = $("p");
+tempTag = document.querySelector(".temp");
+url =
   "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=97703,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109";
 
 // check for users local time, apply appropriate day/night mode
@@ -57,6 +58,11 @@ buttons.map(item => {
       currentPar = socialPar;
     }
     currentPar.removeClass("notClicked").addClass("isClicked");
+    if (!(currentPar == contactPar)) {
+      $(".blurb").addClass("notClicked");
+    } else {
+      $(".blurb").removeClass("notClicked");
+    }
     sections.map(section => {
       if (!(section == currentPar)) {
         section.removeClass("isClicked").addClass("notClicked");

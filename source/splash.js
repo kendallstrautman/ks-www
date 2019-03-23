@@ -27,8 +27,8 @@ if (hours >= 19 || hours <= 6) {
 
 //initiate loading animation
 setTimeout(function() {
-  landingPar.addClass("transform");
-  contactPar.addClass("transform");
+  // landingPar.addClass("transform");
+  // contactPar.addClass("transform");
   infoTags.addClass("active");
 }, 400);
 

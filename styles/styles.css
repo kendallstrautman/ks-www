@@ -50,13 +50,14 @@ section.blurb {
     padding: 20vw 10vw 0 10vw;
     display: flex;
   }
-
+/*overflow auto for mobile???? */
 section.work {
  height: 100%;
  display: flex;
  flex-direction: column;
  justify-content: center;
- padding: 20vw 0 0 10vw;
+ padding: 10vw 0 0 10vw;
+ height: 75vh;
 }
 
 section.social {
@@ -170,14 +171,13 @@ body.dayMode {
 .isClicked {
     visibility: visible;
     opacity: 1;
-    transition: opacity .4s, visibility 0s linear 400ms;
+    transition: opacity .3s, visibility 0s linear 300ms;
   }
 
 .notClicked {
     visibility: hidden;
     position: absolute;
-    opacity: 0;
-    transition: opacity .2s linear, visibility 0s linear 200ms;
+   
   }
 
 /* ------ MEDIAQUERIES ------------------------------------------------------*/
@@ -192,7 +192,11 @@ body.dayMode {
           max-width: 500px;
         }
 
-      p:nth-child(n+2) { padding-top: 24px; }
+        section.work {
+          height: 75vh;
+        }
+
+      p:nth-child(n+1) { padding-top: 24px; }
 
     }
 
@@ -252,7 +256,11 @@ body.dayMode {
           justify-content: space-between;
         }
 
-        p:nth-child(n+1) { padding-top: 24px; }
+      section.work {
+        padding: 5vw 0 0 10vw;
+      }
+
+        p:nth-child(n+2) { padding-top: 24px; }
 
     }
 
@@ -302,6 +310,10 @@ body.dayMode {
           height: 130px;
           margin: auto 0 auto 0;
         }
+
+    section.work {
+          padding-top: 20vw;
+     }
 
     section.info p {
           width: 70px;
@@ -434,6 +446,11 @@ chose @keyframes to have more control
     p > a:hover:after {
       width: 100%;
       left: 0;
+    }
+
+    p >a::selection {
+      width: 100%;
+      
     }
 
   }

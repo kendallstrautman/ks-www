@@ -35,10 +35,12 @@ body {
     overflow: hidden;
     height: 100%;
     width: 100%;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
   }
 
 div.main {
-    height: 88vh;
+    min-height: 88vh;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
@@ -48,6 +50,22 @@ section.blurb {
     padding: 20vw 10vw 0 10vw;
     display: flex;
   }
+/*overflow auto for mobile???? */
+section.work {
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 10vw 0 0 10vw;
+ height: 75vh;
+}
+
+section.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20vw 10vw 0 10vw;
+}
 
 section.info {
     padding: 0 10vw 10vw 10vw;
@@ -61,7 +79,25 @@ h1 {
       font-size: 36px;
       letter-spacing: .5px;
       font-weight: 100;
-    }
+}
+
+h1.work__h1 {
+  font-size: 24px;
+}
+
+div.work-item {
+  /* width: 66vw; */
+  /* height: 8vw; */
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+div.work-item > p {
+  padding-top: 0;
+}
 
 /* --Links ------------------------------------------------------------------*/
 
@@ -135,14 +171,13 @@ body.dayMode {
 .isClicked {
     visibility: visible;
     opacity: 1;
-    transition: opacity .4s, visibility 0s linear 400ms;
+    transition: opacity .3s, visibility 0s linear 300ms;
   }
 
 .notClicked {
     visibility: hidden;
     position: absolute;
-    opacity: 0;
-    transition: opacity .2s linear, visibility 0s linear 200ms;
+   
   }
 
 /* ------ MEDIAQUERIES ------------------------------------------------------*/
@@ -157,6 +192,10 @@ body.dayMode {
           max-width: 500px;
         }
 
+        section.work {
+          height: 75vh;
+        }
+
       p:nth-child(n+1) { padding-top: 24px; }
 
     }
@@ -169,19 +208,19 @@ body.dayMode {
   and (-webkit-device-pixel-ratio : 3) {
 
       div.main {
-          height: 88vh;
+          min-height: 88vh;
         }
     }
 
 /*--Iphone 6+, 7+, 8+, XR and XR Max ----------------------------------------*/
 
 @media screen and
-  and (min-height: 668px)
+  (min-height: 668px)
   and (max-height: 897px)
   and (-webkit-max-device-pixel-ratio: 3) {
 
       div.main {
-          height: 90vh;
+          min-height: 90vh;
         }
     }
 
@@ -192,7 +231,7 @@ body.dayMode {
   and (max-width: 1023px) {
 
       div.main {
-          height: 100vh;
+          min-height: 100vh;
         }
 
       a.emailSml,
@@ -217,7 +256,11 @@ body.dayMode {
           justify-content: space-between;
         }
 
-        p:nth-child(n+1) { padding-top: 24px; }
+      section.work {
+        padding: 5vw 0 0 10vw;
+      }
+
+        p:nth-child(n+2) { padding-top: 24px; }
 
     }
 
@@ -242,6 +285,15 @@ body.dayMode {
         letter-spacing: .5px;
       }
 
+      h1.work__h1 {
+        font-size: 36px;
+      }
+
+    section.social,
+    section.work {
+      padding: 0 0 0 50px;
+    }
+
     section.blurb {
           padding: 0;
           max-width: 500px;
@@ -258,6 +310,10 @@ body.dayMode {
           height: 130px;
           margin: auto 0 auto 0;
         }
+
+    section.work {
+          padding-top: 20vw;
+     }
 
     section.info p {
           width: 70px;
@@ -390,6 +446,11 @@ chose @keyframes to have more control
     p > a:hover:after {
       width: 100%;
       left: 0;
+    }
+
+    p >a::selection {
+      width: 100%;
+      
     }
 
   }

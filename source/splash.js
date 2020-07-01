@@ -26,17 +26,17 @@ if (hours >= 19 || hours <= 6) {
 }
 
 //initiate loading animation
-setTimeout(function() {
+setTimeout(function () {
   // landingPar.addClass("transform");
   // contactPar.addClass("transform");
   infoTags.addClass("active");
 }, 400);
 
 //fetch temp from openweathermap, update the dom
-const checkTemp = function() {
+const checkTemp = function () {
   fetch(url)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       realTemp = data.main.temp;
       //convert kelvin data to farenheight
       realTemp = Math.round(1.8 * (realTemp - 273) + 32).toString();
@@ -47,8 +47,8 @@ const checkTemp = function() {
 checkTemp();
 
 //upon click of the contactBtn, alter which blurb is showing
-buttons.map(item => {
-  return item.click(e => {
+buttons.map((item) => {
+  return item.click((e) => {
     let currentPar;
     if (e.target.innerHTML == "contact") {
       currentPar = contactPar;
@@ -63,7 +63,7 @@ buttons.map(item => {
     } else {
       $(".blurb").removeClass("notClicked");
     }
-    sections.map(section => {
+    sections.map((section) => {
       if (!(section == currentPar)) {
         section.removeClass("isClicked").addClass("notClicked");
       }
@@ -86,5 +86,5 @@ buttons.map(item => {
 if (window.innerWidth > 460) {
   document.querySelector(
     ".landingBlurb"
-  ).innerHTML = `web development, <br> creative writing and <br> digital production`;
+  ).innerHTML = `web development, <br> product strategy and <br> technical writing`;
 }

@@ -16,7 +16,7 @@ sections = [contactPar, workPar, socialPar, landingPar];
 infoTags = $("p");
 tempTag = document.querySelector(".temp");
 url =
-  "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=97703,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109";
+  "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=93514,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109";
 
 // check for users local time, apply appropriate day/night mode
 if (hours >= 19 || hours <= 6) {

@@ -29,6 +29,7 @@
   --color-cadmium-green: #0b6a3b;
   --color-midnight-blue: #0b1b6a;
   --color-pale-lemon-cake: #e5e7a8;
+  --color-marigold: #f1a50d;
 }
 
 body {
@@ -76,7 +77,7 @@ section.social {
 }
 
 section.info {
-  padding: 0 10vw 60px 10vw;
+  padding: 0 10vw 5vh 10vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -114,7 +115,8 @@ div.work-item > p {
 
 #cursor {
   display: none;
-  background-color: var(--color-pale-lemon-cake);
+  background-color: var(--color-marigold);
+
   border-radius: 50%;
   height: 15px;
   width: 15px;
@@ -126,7 +128,7 @@ div.work-item > p {
 
 #cursor-tail {
   display: none;
-  background-color: var(--color-rosewood);
+  background-color: var(--color-pale-lemon-cake);
   border-radius: 50%;
   height: 7px;
   width: 7px;
@@ -238,7 +240,7 @@ body.dayMode {
 
 @media screen and (min-height: 668px) and (max-height: 897px) and (-webkit-max-device-pixel-ratio: 3) {
   div.main {
-    min-height: 90vh;
+    min-height: 100vh;
   }
 }
 

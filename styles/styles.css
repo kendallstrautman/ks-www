@@ -76,7 +76,7 @@ section.social {
 }
 
 section.info {
-  padding: 0 10vw 10vw 10vw;
+  padding: 0 10vw 60px 10vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

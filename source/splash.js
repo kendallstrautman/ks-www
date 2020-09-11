@@ -1,8 +1,5 @@
 /*jshint esversion: 6 */
 
-// const now = new Date()
-// hours = now.getHours()
-bodyElm = $('body')
 contactBtn = $('.contact')
 workBtn = $('.item2')
 socialBtn = $('.item3')
@@ -18,17 +15,8 @@ tempTag = document.querySelector('.temp')
 url =
   'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=93514,us&appid=3a404b80d0e33ee5a99bbcf17f1ad109'
 
-// check for users local time, apply appropriate day/night mode
-// if (hours >= 19 || hours <= 6) {
-//   bodyElm.addClass("nightMode");
-// } else {
-//   bodyElm.addClass("dayMode");
-// }
-
 //initiate loading animation
 setTimeout(function () {
-  // landingPar.addClass("transform");
-  // contactPar.addClass("transform");
   infoTags.addClass('active')
 }, 400)
 

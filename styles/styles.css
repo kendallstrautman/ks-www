@@ -136,12 +136,6 @@ span.locationLrg {
 
 /*-------COLOR-FADE-ANIMATION------------------------------------------------*/
 
-body.nightMode {
-  animation: bgNight 15s linear 1s infinite alternate;
-  color: #dfdfd9;
-  background-color: #1d1d21;
-}
-
 body.dayMode {
   animation: bgDay 15s linear 1s infinite alternate;
 }
@@ -158,18 +152,6 @@ body.dayMode {
   }
   100% {
     background-color: var(--color-midnight-blue);
-  }
-}
-
-@keyframes bgNight {
-  0% {
-    background-color: #1d1d21;
-  }
-  50% {
-    background-color: #18162b;
-  }
-  100% {
-    background-color: #3b3233;
   }
 }
 

@@ -7,7 +7,6 @@ workPar = $('.work')
 socialPar = $('.social')
 landingPar = $('.landingBlurb')
 contactPar = $('.contactBlurb')
-// contactPar = $(".blurb");
 buttons = [contactBtn, workBtn, socialBtn]
 sections = [contactPar, workPar, socialPar, landingPar]
 infoTags = $('p')
@@ -64,3 +63,64 @@ if (window.innerWidth > 460) {
     '.landingBlurb'
   ).innerHTML = `web development, <br> product strategy and <br> technical writing`
 }
+
+const cursor = document.getElementById('cursor')
+const cursorTail = document.getElementById('cursor-tail')
+let mouseX = 0
+let mouseY = 0
+let tailX = 0
+let tailY = 0
+
+function checkTouchDevice() {
+  return 'ontouchstart' in document.documentElement
+}
+
+/*------------------custom cursor ------------------------*/
+
+function handleAnimateTail() {
+  const speed = 0.15
+  const distX = mouseX - tailX
+  const distY = mouseY - tailY
+
+  tailX += distX * speed
+  tailY += distY * speed
+
+  cursorTail.style.left = tailX + 'px'
+  cursorTail.style.top = tailY + 'px'
+
+  requestAnimationFrame(handleAnimateTail)
+}
+
+handleAnimateTail()
+
+document.addEventListener('mousemove', (event) => {
+  if (!checkTouchDevice()) {
+    cursor.style.display = 'inline'
+    cursorTail.style.display = 'inline'
+    x = event.pageX
+    y = event.pageY
+
+    if (
+      x <= document.documentElement.clientWidth &&
+      y <= document.documentElement.clientHeight
+    ) {
+      cursor.style.top = y + 'px'
+      cursor.style.left = x + 'px'
+      mouseX = x + 4
+      mouseY = y + 4
+      console.log(cursor.style.top)
+    }
+  } else {
+    document.querySelector('body').style.cursor = 'auto'
+  }
+})
+
+document.addEventListener('mouseleave', () => {
+  cursor.style.display = 'none'
+  cursorTail.style.display = 'none'
+})
+
+document.addEventListener('mouseenter', () => {
+  cursor.style.display = 'inline'
+  cursorTail.style.display = 'inline'
+})

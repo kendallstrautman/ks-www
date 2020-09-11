@@ -43,6 +43,7 @@ body {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  cursor: none;
   /* overflow-y: auto;
     overflow-x: hidden; */
 }
@@ -111,6 +112,30 @@ div.work-item > p {
   /* display: none; */
 }
 
+#cursor {
+  display: none;
+  background-color: var(--color-pale-lemon-cake);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 1001;
+}
+
+#cursor-tail {
+  display: none;
+  background-color: var(--color-rosewood);
+  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 1001;
+}
+
 /* --Links ------------------------------------------------------------------*/
 
 a {
@@ -119,7 +144,8 @@ a {
   padding: 0 3px 0 3px;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: none;
+  outline: none;
 }
 
 a:hover {

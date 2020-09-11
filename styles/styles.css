@@ -123,7 +123,7 @@ a {
 }
 
 a:hover {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color-pale-lemon-cake);
 }
 
 a.emailLrg,
@@ -386,7 +386,7 @@ body.dayMode {
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #fff;
+    background: var(--color-pale-lemon-cake);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
@@ -414,7 +414,7 @@ body.dayMode {
     height: 1px;
     left: 50%;
     position: absolute;
-    background: #fff;
+    background: var(--color-pale-lemon-cake);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }

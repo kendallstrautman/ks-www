@@ -24,9 +24,6 @@
 /*---------MAIN-STYLES-------------------------------------------------------*/
 
 :root {
-  /* --color-nude: #dccebe;
-  --color-pink: #dabebe;
-  --color-blue: #c8d6d8; */
   --color-rosewood: #680b1b;
   --color-antique-bronze: #6a5a0b;
   --color-cadmium-green: #0b6a3b;
@@ -363,25 +360,6 @@ body.dayMode {
       opacity: 1;
     }
   }
-
-  /* below is the same animation used with transitions/transforms.
-chose @keyframes to have more control
-
-    .landingBlurb {
-        opacity: 0;
-        transition: transform 1.5s cubic-bezier(.45, 0, .68, 1), opacity 1s;
-        width: 500px;
-      }
-
-    .contactBlurb {
-        transition: transform 1.5s cubic-bezier(.45, 0, .68, 1);
-        width: 500px;
-      }
-
-    .transform {
-        transform: translateX(100px);
-        opacity: 1;
-      } */
 
   /*---Special HOVER STATES---------------------------------------------**/
 

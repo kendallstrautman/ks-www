@@ -77,7 +77,7 @@ section.social {
 }
 
 section.info {
-  padding: 0 10vw 5vh 10vw;
+  padding: 0 10vw 60px 10vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -240,7 +240,7 @@ body.dayMode {
 
 @media screen and (min-height: 668px) and (max-height: 897px) and (-webkit-max-device-pixel-ratio: 3) {
   div.main {
-    min-height: 100vh;
+    min-height: 90vh;
   }
 }
 

@@ -162,7 +162,7 @@ span.locationLrg {
 /*-------COLOR-FADE-ANIMATION------------------------------------------------*/
 
 body.dayMode {
-  animation: bgDay 18s linear 1s infinite;
+  animation: bgDay 20s linear 1s infinite;
 }
 
 @keyframes bgDay {

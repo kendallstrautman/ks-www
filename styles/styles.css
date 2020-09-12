@@ -49,6 +49,11 @@ body {
     overflow-x: hidden; */
 }
 
+::selection {
+  color: var(--color-rosewood);
+  background-color: var(--color-marigold);
+}
+
 div.main {
   min-height: 88vh;
   display: flex;

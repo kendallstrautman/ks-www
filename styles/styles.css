@@ -162,21 +162,24 @@ span.locationLrg {
 /*-------COLOR-FADE-ANIMATION------------------------------------------------*/
 
 body.dayMode {
-  animation: bgDay 15s linear 1s infinite alternate;
+  animation: bgDay 18s linear 1s infinite;
 }
 
 @keyframes bgDay {
   0% {
     background-color: var(--color-rosewood);
   }
-  33% {
+  25% {
     background-color: var(--color-antique-bronze);
   }
-  66% {
+  50% {
     background-color: var(--color-cadmium-green);
   }
-  100% {
+  75% {
     background-color: var(--color-midnight-blue);
+  }
+  100% {
+    background-color: var(--color-rosewood);
   }
 }
 
